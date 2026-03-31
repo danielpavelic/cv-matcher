@@ -12,7 +12,7 @@ interface FileUploadProps {
 export default function FileUpload({
   onFileSelected,
   acceptedTypes = ".pdf,.doc,.docx",
-  label = "Upload your CV",
+  label = "Upload your resume",
   description = "PDF or Word document (max 10 MB)",
 }: FileUploadProps) {
   const [dragActive, setDragActive] = useState(false);

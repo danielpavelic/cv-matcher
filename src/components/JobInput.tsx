@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface JobInputProps {
-  onJobDataReady: (data: { type: "url" | "text"; value: string }) => void;
+  onJobDataReady: (data: { type: "url" | "text"; value: string } | null) => void;
 }
 
 export default function JobInput({ onJobDataReady }: JobInputProps) {
@@ -13,13 +13,20 @@ export default function JobInput({ onJobDataReady }: JobInputProps) {
 
   const isValid = mode === "url" ? url.trim().length > 0 : text.trim().length > 50;
 
-  const handleSubmit = () => {
-    if (!isValid) return;
-    onJobDataReady({
-      type: mode,
-      value: mode === "url" ? url.trim() : text.trim(),
-    });
-  };
+  const notify = useCallback(() => {
+    if (isValid) {
+      onJobDataReady({
+        type: mode,
+        value: mode === "url" ? url.trim() : text.trim(),
+      });
+    } else {
+      onJobDataReady(null);
+    }
+  }, [mode, url, text, isValid, onJobDataReady]);
+
+  useEffect(() => {
+    notify();
+  }, [notify]);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import { PDFParse } from "pdf-parse";
+import { extractText } from "unpdf";
 import mammoth from "mammoth";
 
 export interface CVSection {
@@ -83,10 +83,10 @@ function detectSections(text: string): CVSection[] {
 }
 
 export async function parsePDF(buffer: Buffer): Promise<string> {
-  const parser = new PDFParse({ data: new Uint8Array(buffer) });
-  const result = await parser.getText();
-  await parser.destroy();
-  return result.text;
+  const result = await extractText(new Uint8Array(buffer), { mergePages: false });
+  // Join pages with double newlines to preserve structure
+  const pages = Array.isArray(result.text) ? result.text : [result.text];
+  return pages.join("\n\n");
 }
 
 export async function parseDOCX(buffer: Buffer): Promise<string> {
@@ -112,6 +112,14 @@ export async function parseCV(
   } else {
     throw new Error("Unsupported file type. Please upload a PDF or Word document.");
   }
+
+  // Normalize smart/curly quotes to straight quotes to prevent JSON issues
+  // when the AI echoes back the original content
+  rawText = rawText
+    .replace(/[\u2018\u2019\u201A]/g, "'")   // smart single quotes
+    .replace(/[\u201C\u201D\u201E]/g, '"')   // smart double quotes
+    .replace(/[\u2013\u2014]/g, "-")          // en/em dashes
+    .replace(/\u2026/g, "...");               // ellipsis
 
   const sections = detectSections(rawText);
 

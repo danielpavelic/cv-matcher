@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { rewriteCV } from "@/lib/rewrite-cv";
+import { analyseRelevance } from "@/lib/analyse-relevance";
 import { trackFunnelEvent } from "@/lib/track-event";
 import type { CVSection } from "@/lib/parse-cv";
 
@@ -30,13 +30,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const result = await rewriteCV(sections, jobDescription);
+    const result = await analyseRelevance(sections, jobDescription);
 
     if (sessionId) {
       void trackFunnelEvent({
         session_id: sessionId,
-        funnel_step: "improved",
-        type: "rewrite",
+        funnel_step: "analysed",
+        type: "relevance",
         status: "success",
         file_type: fileType || null,
         sections_count: sections.length,
@@ -47,15 +47,15 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(result);
   } catch (error) {
-    console.error("Rewrite error:", error);
+    console.error("Relevance analysis error:", error);
     const message =
-      error instanceof Error ? error.message : "Failed to rewrite CV";
+      error instanceof Error ? error.message : "Failed to analyse relevance";
 
     if (sessionId) {
       void trackFunnelEvent({
         session_id: sessionId,
-        funnel_step: "improved",
-        type: "rewrite",
+        funnel_step: "analysed",
+        type: "relevance",
         status: "error",
         response_time_ms: Date.now() - startTime,
         error_message: message,
