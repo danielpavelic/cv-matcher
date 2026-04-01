@@ -61,6 +61,42 @@ ABSOLUTE RULES:
 5. NEVER remove real achievements or experience.
 6. NEVER change company names, dates, or factual details.
 7. The output must have the SAME NUMBER of bullet points per role as the original (or fewer if you merged closely related ones — never more).
+8. ALWAYS write in implied first person — OMIT "I" entirely. Never use "he/she/they" or third person. Start bullets and sentences directly with action verbs (e.g. "Led a team...", "Delivered...", "Managed..."). For summaries/profiles, also omit "I" (e.g. "Results-driven engineer with..." not "I am a results-driven engineer..."). This is standard professional resume convention.
+9. ALWAYS ensure the output is grammatically correct, properly punctuated, and lexically accurate. No spelling errors, no broken sentences, no misused words. Every sentence must read naturally and professionally.
+10. ALWAYS start bullet points with a strong action verb (e.g. "Drove", "Delivered", "Spearheaded", "Architected", "Optimised", "Established"). Never start with "Was responsible for...", "Helped with...", "Assisted in...", or weak/passive phrasing.
+11. USE PRESENT TENSE for the current role (e.g. "Drive technical strategy...", "Lead a team of...") and PAST TENSE for all previous roles (e.g. "Drove technical strategy...", "Led a team of..."). Be consistent — do not mix tenses within the same role.
+12. MAINTAIN CONSISTENCY throughout the entire document — consistent formatting, consistent bullet point style, consistent capitalisation, consistent punctuation (e.g. if one bullet ends with a period, all bullets must end with a period). The resume must read as one cohesive document, not a patchwork of different writing styles.
+13. SUMMARY/PROFILE SECTION — if the CV has a Summary, Profile, or About section, rewrite it to clearly and concisely communicate these four things (using ONLY facts from the original CV):
+    a) WHO YOU ARE — professional identity/title (e.g. "Senior Engineering Leader", "Experienced Marketing Strategist")
+    b) YOUR LEVEL — years of experience or seniority level, taken directly from the CV (e.g. "with 20+ years of experience", "senior-level")
+    c) YOUR DOMAIN — primary industry or area of expertise (e.g. "in financial services", "across regulated environments", "in SaaS product development")
+    d) YOUR BIGGEST VALUE — the candidate's standout strength or achievement, drawn from the CV (e.g. "with a 100% delivery track record", "known for building high-performance teams", "specialising in scaling products from 0 to market")
+    Keep it to 2-3 sentences max. Do NOT invent seniority, domains, or achievements not present in the original CV. Mirror the job advert's language where it genuinely fits.
+
+14. VISUAL HIERARCHY — the resume must be scannable at 30% attention. A hiring manager glancing for 6 seconds should immediately see the key points.
+    DO:
+    - Keep every bullet to 1-2 lines max. If a bullet runs longer, split it or cut the filler.
+    - Lead each bullet with the most important information (action + result first, context second).
+    - Use concise, punchy language. Every word must earn its place.
+    - Leave clean spacing between sections and role blocks.
+    DON'T:
+    - Write dense paragraphs — break them into bullets.
+    - Create walls of text — if a role has more than 6-8 bullets, keep only the most impactful ones and merge the rest.
+    - Use filler phrases like "was tasked with", "played a role in", "was involved in" — get to the point.
+    - Repeat the same achievement in different words across multiple bullets.
+
+15. MAKE PROMOTIONS OBVIOUS — if the candidate was promoted within the same company, make it stand out. Format it clearly so the reader immediately sees career progression (e.g. "Promoted from Team Lead to Technical Lead within 6 months" or structure the roles visibly under the same company header). Promotions are one of the strongest signals of value — never bury them.
+
+16. EMBED SKILLS INTO ACHIEVEMENTS — don't list skills in isolation. Weave them into accomplishment bullets where possible. Instead of a flat skills list saying "Python, AWS, Docker", show them in action: "Automated cloud provisioning using Python and AWS, reducing deployment time". The skills section can still exist, but the experience section should demonstrate the skills in context. Only do this with skills already mentioned in the original CV.
+
+17. END WITH A SPIKE — scan the entire CV for ONE thing that makes this candidate memorable and ensure it's prominently placed. This could be:
+    - Built or co-founded a startup
+    - Led a major transformation or turnaround
+    - A unique combination of skills (e.g. engineering + business + design)
+    - A side project with real traction (users, revenue, recognition)
+    - An award, recognition, or standout achievement
+    - Featured or published somewhere notable
+    If such a spike exists in the original CV, make sure it's not buried — surface it in the summary or as the last memorable bullet. If nothing stands out, do not fabricate one. Not every CV has a spike, and that's fine.
 
 WHAT YOU MAY DO:
 1. REPHRASE using the job advert's terminology where the meaning is genuinely equivalent.
@@ -78,6 +114,13 @@ WHAT YOU MAY DO:
    - "Worked on..." → "Contributed to... achieving..."
    But the underlying fact MUST be the same. You are changing "how it's said", not "what happened".
 
+QUANTIFY EVERYTHING POSSIBLE:
+- Scan the ENTIRE original CV for any numbers, metrics, percentages, team sizes, user counts, revenue figures, timeframes, or measurable outcomes. Attach them to the most relevant bullet points.
+- If a number appears in one section (e.g. "10k+ monthly visits" in achievements), use it in the related bullet (e.g. "Built developer portal, achieving 10k+ monthly visits").
+- If the CV mentions a team, always include the size (e.g. "Led a team" → "Led a team of 8 engineers" if "8" appears anywhere in that role).
+- If the CV mentions a timeframe, attach it (e.g. "Promoted" → "Promoted within 6 months" if stated elsewhere).
+- Quantified bullets are dramatically more impactful for both human readers and ATS systems.
+
 OUTCOME RULES — CRITICAL:
 - You may connect an action to its obvious, inherent outcome (e.g. "automated X" → "automated X, eliminating manual effort")
 - You may move metrics/results from one bullet to another within the SAME role if it creates a stronger narrative
@@ -88,7 +131,17 @@ OUTCOME RULES — CRITICAL:
 FINAL CHECK — for every line you write, ask yourself:
 1. "Does this line exist in the original CV, just worded differently?" — if NO, delete it.
 2. "Are any numbers or metrics in this line present in the original?" — if NO, remove them.
-3. "Would the candidate read this and say 'yes, that's exactly what I did and achieved'?" — if NO, tone it down.`;
+3. "Would the candidate read this and say 'yes, that's exactly what I did and achieved'?" — if NO, tone it down.
+4. "Is this written in implied first person with 'I' omitted?" — if NO, fix it. Remove any "I am", "I have", "I led" — just start with the verb.
+5. "Is this grammatically correct, properly spelled, and does it read naturally?" — if NO, fix it.
+6. "Does every bullet start with a strong action verb?" — if NO, rephrase to lead with one.
+7. "Is the current role in present tense and all past roles in past tense?" — if NO, fix the tense.
+8. "Is the formatting, style, punctuation, and capitalisation consistent across the entire document?" — if NO, standardise it.
+
+REALITY CHECK — step back and review the ENTIRE resume as a whole before finalising:
+1. "Would a stranger understand this candidate's value in 30 seconds?" — if NOT, the summary is too vague or the key achievements are buried. Fix it.
+2. "Does this person sound like they DID things, or just WERE PRESENT?" — scan every bullet. Replace any that describe attendance ("was part of", "was involved in", "participated in") with ownership ("drove", "delivered", "built"). If the original doesn't support ownership, keep it honest but make the contribution specific.
+3. "Is there proof of impact everywhere?" — every role should have at least one bullet with a measurable outcome or concrete result. If the original CV has numbers anywhere, they should be attached to the right bullets. If a role has zero proof of impact, surface the strongest implied outcome.`;
 
 export async function rewriteCV(
   sections: CVSection[],
