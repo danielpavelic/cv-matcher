@@ -1,3 +1,4 @@
+import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import type { CVSection } from "./parse-cv";
 
@@ -66,10 +67,28 @@ WHAT YOU MAY DO:
 2. REORDER bullet points to put the most relevant ones first.
 3. ADJUST the professional summary to highlight relevant aspects — but only using facts from the original CV.
 4. IMPROVE weak phrasing with stronger action verbs — but the described action must remain the same.
+5. MAKE EXISTING BULLETS MORE OUTCOME-FOCUSED — if the original describes an action, rewrite it to emphasise the result or impact, but ONLY using information already present in the CV. For example:
+   - Original: "Managed a team of 8 developers" → "Led a team of 8 developers, delivering all projects on schedule" ✓ ONLY if on-time delivery is mentioned elsewhere in that role
+   - Original: "Created automated release process" → "Automated the release process, reducing deployment time and eliminating manual errors" ✓ ONLY if this outcome is clearly implied by the context (automation inherently reduces manual work)
+   - Original: "Built a developer portal" → "Built a developer portal from ground up, achieving 10k+ monthly visits" ✓ ONLY if the 10k metric exists somewhere in the original CV
+   - Original: "Built a developer portal" → "Built a developer portal, increasing developer productivity by 40%" ✗ FABRICATED — that metric was never mentioned
+6. USE STRONG RESULT-ORIENTED LANGUAGE — lead with impact where possible:
+   - "Responsible for..." → "Drove..." or "Delivered..."
+   - "Helped improve..." → "Improved... resulting in..."
+   - "Worked on..." → "Contributed to... achieving..."
+   But the underlying fact MUST be the same. You are changing "how it's said", not "what happened".
+
+OUTCOME RULES — CRITICAL:
+- You may connect an action to its obvious, inherent outcome (e.g. "automated X" → "automated X, eliminating manual effort")
+- You may move metrics/results from one bullet to another within the SAME role if it creates a stronger narrative
+- You MUST NOT invent percentages, numbers, timeframes, or metrics that don't exist anywhere in the original CV
+- You MUST NOT claim outcomes that aren't stated or directly implied
+- "Implied" means logically inevitable (automation reduces manual work). "Implied" does NOT mean "sounds reasonable" (managing a team does NOT imply revenue growth).
 
 FINAL CHECK — for every line you write, ask yourself:
-"Does this line exist in the original CV, just worded differently?"
-If the answer is NO → delete it and use the original line instead.`;
+1. "Does this line exist in the original CV, just worded differently?" — if NO, delete it.
+2. "Are any numbers or metrics in this line present in the original?" — if NO, remove them.
+3. "Would the candidate read this and say 'yes, that's exactly what I did and achieved'?" — if NO, tone it down.`;
 
 export async function rewriteCV(
   sections: CVSection[],
@@ -96,13 +115,13 @@ Here are the sections of the candidate's current CV:
 ${sectionsJSON}
 </cv_sections>
 
-Rephrase the CV to use the job advert's terminology where the meaning is genuinely the same. Do NOT add anything new.
+Rephrase the CV to use the job advert's terminology and make it more outcome-focused. Do NOT add anything new.
 
 PROCESS:
-1. For each bullet point in the original CV, check if the job advert uses different words for the same concept.
-2. If yes, rephrase using the job advert's words. If no, keep the original or make minor phrasing improvements.
-3. Reorder bullets within each role to put the most relevant ones first.
-4. The output must have the same bullet points as the original — just rephrased. No new bullets.
+1. For each bullet point, check if the job advert uses different words for the same concept. If yes, rephrase using the job advert's words.
+2. Make each bullet more results-oriented — lead with impact, connect actions to their outcomes. But ONLY use outcomes that are stated or directly implied in the original CV. Never invent metrics.
+3. Reorder bullets within each role to put the most relevant and impactful ones first.
+4. The output must have the same bullet points as the original — just rephrased and made more outcome-focused. No new bullets.
 
 RULES:
 - Every output line must map to a specific original line. If it doesn't, delete it.

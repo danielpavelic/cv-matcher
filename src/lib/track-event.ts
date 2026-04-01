@@ -1,3 +1,4 @@
+import "server-only";
 import { getSupabase } from "./supabase";
 
 export type FunnelStep = "analysed" | "improved" | "paid" | "downloaded";
