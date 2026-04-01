@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "AI Resume Matcher — Tailor Your Resume to Any Job",
   description:
     "Upload your CV or resume, paste a job advert, and get an optimized resume that highlights your most relevant experience. Land more interviews without changing who you are.",
+  icons: {
+    icon: "/assets/airesumematcher-logo.png",
+  },
 };
 
 export default function RootLayout({
